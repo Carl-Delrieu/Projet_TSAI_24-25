@@ -1,3 +1,62 @@
+# Projet TSAI 2024-25
+
+## Contexte
+L'imagerie par ultrasons est largement utilisée dans le diagnostic médical en raison de sa nature non invasive, de son faible coût, etc. L'utilité de l'imagerie par ultrasons est fortement réduite par la présence d'un bruit dépendant du signal connu sous le nom de speckle. A cause de ce bruit, la résolution et le contraste de l'image acquise sont réduits, ce qui affecte la valeur diagnostique de cette modalité. Par conséquent, la réduction de ce bruit est une étape de prétraitement essentielle. 
+
+## Objectif
+- Étudier de nouvelles méthodes d’apprentissage profond et des codes associés pour la réduction du bruit speckle des images ultrasonores. Par exemple, des méthodes décrites dans \[1\] ou d’autres existantes dans la littérature. 
+- Reproduire des résultats du papier choisi.
+- Tester ces méthodes sur nos images ultrasonores \[2\] et en déduire la méthode la plus prometteuse.
+
+\[1\] A. B. Molini, D. Valsesia, G. Fracastoro and E. Magli, "Speckle2Void: Deep Self-Supervised SAR Despeckling With Blind-Spot Convolutional Neural Networks," in IEEE Transactions on Geoscience and Remote Sensing, vol. 60, pp. 1-17, 2022, Art no. 5204017, doi: 10.1109/TGRS.2021.3065461.
+
+\[2\] Data à tester : https://cloud.irit.fr/index.php/s/VVfmYuZhUY7nQ3m
+
+## Membres du groupe
+- Premier membre:
+  - **Nom** : DELRIEU
+  - **Prénom** : Carl
+- Second membre:
+  - **Nom** : VERGÉ
+  - **Prénom** : Dorian
+
+## Installation principale :
+- Cloner le dépôt
+- Créer un environnement virtuel sous python3.7
+- Activer l'environnement virtuel
+- Installer les dépendances
+  ```bash
+  $ pip install -r requirements.txt
+  ```
+- Lancer le notebook `projet.ipynb`
+
+## Installation de l'autre papier :
+- Aller dans le dossier `autre_papier`
+- Créer un environnement virtuel sous python3.8
+- Activer l'environnement virtuel
+- Installer les dépendances
+  ```bash
+  $ pip install numpy
+  $ pip install torch
+  $ pip install torchvision
+  $ pip install matplotlib
+  $ pip install tqdm
+  $ pip install --upgrade pip setuptools wheel
+  $ pip install kaggle
+  ```
+- Aller sur le site de Kaggle et créer un compte
+- Exporter les identifiants de l'API Kaggle
+  ```bash
+  $ export KAGGLE_USERNAME=your_kaggle_username
+  $ export KAGGLE_KEY=your_kaggle_key
+  ```
+- Executer le script python pour télécharger les données
+  ```bash
+  $ python main.py
+  ```
+- Lancer le notebook `Notebook.ipynb`
+
+
 # [Speckle2Void: Deep Self-Supervised SAR Despeckling with Blind-Spot Convolutional NeuralNetworks](https://arxiv.org/abs/2007.02075)
 
 Speckle2Void is a self-supervised Bayesian despeckling framework that enables direct training on real SAR images. This method bypasses the problem of training a CNN on synthetically-speckled optical images, thus avoiding any domain gap and enabling  learning of features from real SAR images. 
